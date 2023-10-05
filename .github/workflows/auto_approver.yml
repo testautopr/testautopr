@@ -1,0 +1,14 @@
+name: Auto approve
+
+on:
+  pull_request_target:
+    branches: [ "updates" ]
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    if: github.actor == 'rfguimaraes' && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'updates' && github.event.pull_request.draft == false && success(steps.actualtest.outputs.status) == 'success'
+    steps:
+      - uses: hmarr/auto-approve-action@v3
