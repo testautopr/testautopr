@@ -1,7 +1,7 @@
 pull_request_rules:
   - name: Automatic merge of updates
     conditions:
-      - "status-success=CI"
+      - "status-success=CITest"
       - "base=main"
     actions:
       merge:
