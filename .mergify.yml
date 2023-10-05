@@ -3,6 +3,7 @@ pull_request_rules:
     conditions:
       - "status-success=CITest"
       - "base=main"
+      - "label=automerge"
     actions:
       merge:
         method: merge
