@@ -3,7 +3,6 @@ pull_request_rules:
     conditions:
       - "status-success=CI"
       - "base=main"
-      - "head=updates"
     actions:
       merge:
         method: merge
