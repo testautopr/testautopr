@@ -13,3 +13,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Dummy test
+        run: |
+          exit ${{ github.workspace }}
+      - name: Test that the value written in the number file is odd
+      - run: |
+          exec test.sh
