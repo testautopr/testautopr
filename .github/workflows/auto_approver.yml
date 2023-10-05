@@ -7,6 +7,7 @@ on:
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == 'testautopr/testautopr' && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'updates' && github.event.pull_request.draft == false
     permissions:
       pull-requests: write
     steps:
