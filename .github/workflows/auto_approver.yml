@@ -16,3 +16,6 @@ jobs:
       pull-requests: write
     steps:
       - uses: hmarr/auto-approve-action@v3
+  just_echo:
+    steps:
+      - run: echo "This is interesting..."
