@@ -11,11 +11,11 @@ jobs:
       - run: ls -1
   auto-approve:
     runs-on: ubuntu-latest
-    if: github.actor == 'rfguimaraes' && github.event.pull_request.head.repo.full_name == 'testautopr/testautopr' && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'updates' && github.event.pull_request.draft == false
+    # if: github.actor == 'rfguimaraes' && github.event.pull_request.head.repo.full_name == 'testautopr/testautopr' && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'updates' && github.event.pull_request.draft == false
     permissions:
       pull-requests: write
     steps:
-      - uses: hmarr/auto-approve-action@v3
+      - uses: testautopr/auto-approve-action@b025421c6ff3f98b093a19fb44d3ea051c5ccf8c
   just_echo:
     runs-on: ubuntu-latest
     steps:
