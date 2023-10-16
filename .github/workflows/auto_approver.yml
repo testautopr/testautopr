@@ -20,7 +20,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: whoami
-  just_echo:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "This is really interesting..."
