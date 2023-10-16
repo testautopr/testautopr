@@ -15,7 +15,15 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: testautopr/auto-approve-action@b025421c6ff3f98b093a19fb44d3ea051c5ccf8c
+      - name: Checkout approver
+        uses: actions/checkout@v4
+        with:
+          repository: testautopr/auto-approve-action
+          ref: b025421c6ff3f98b093a19fb44d3ea051c5ccf8c
+          token: ${{ secrets.APPROVER_TOKEN }}
+          path: ./.github/actions/auto-approve-action
+      - name: Run auto approver 
+        uses: ./.github/actions/auto-approve-action/action.yml
   just_echo:
     runs-on: ubuntu-latest
     steps:
