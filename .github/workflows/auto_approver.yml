@@ -17,5 +17,6 @@ jobs:
     steps:
       - uses: hmarr/auto-approve-action@v3
   just_echo:
+    runs-on: ubuntu-latest
     steps:
       - run: echo "This is interesting..."
